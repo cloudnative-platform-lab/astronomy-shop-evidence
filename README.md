@@ -1,291 +1,230 @@
 # Astronomy Shop Cloud-Native Platform
 
-We are Prasanna and Narendhiran, and we are building a cloud-native platform around the Astronomy Shop microservices application.
+This repository contains the public technical evidence for the Astronomy Shop cloud-native platform project developed by Prasanna and Narendhiran.
 
-The purpose of this project is to demonstrate how a microservices application can be provisioned, built, deployed, operated and tested using AWS, Terraform, Amazon EKS, Kubernetes and GitOps practices.
+The project uses the Astronomy Shop microservices application as a realistic workload for demonstrating how cloud infrastructure, container delivery, Kubernetes, GitOps, observability, security, backup, scaling and cost controls work together on AWS.
 
-This public repository documents the project through architecture diagrams, selected implementation details, sanitized command outputs, deployment results, operational tests, failures and improvements.
+Our objective is not simply to deploy an application to Amazon EKS. We are documenting how the platform was designed, implemented, tested, debugged and improved.
 
 ## Application overview
 
-Astronomy Shop is a microservices-based e-commerce application containing the following nine services:
+The Astronomy Shop application contains nine microservices:
 
-* frontend
-* frontend-proxy
-* product-catalog
-* cart
-* checkout
-* payment
-* currency
-* recommendation
-* image-provider
+- frontend
+- frontend-proxy
+- product-catalog
+- cart
+- checkout
+- payment
+- currency
+- recommendation
+- image-provider
 
-The `frontend-proxy` service acts as the main application entry point. The other application services communicate internally through Kubernetes networking.
+The `frontend-proxy` service acts as the main application entry point. The remaining services communicate internally through Kubernetes networking.
+
+This application gives us a realistic environment for validating application delivery, service communication, scaling, monitoring, failure recovery and platform operations.
 
 ## Platform scope
 
 The project covers the following areas:
 
-* AWS networking and infrastructure
-* Terraform modules and environment configuration
-* Amazon EKS and Kubernetes
-* IAM, OIDC and workload access
-* Amazon ECR and container-image delivery
-* GitHub Actions CI/CD
-* Helm and Argo CD GitOps
-* Argo Rollouts
-* AWS Load Balancer Controller
-* runtime configuration
-* HPA and Karpenter scaling
-* Prometheus, Grafana, Loki and OpenTelemetry
-* security controls
-* backup and restoration
-* failure testing and recovery
-* cost management and FinOps
-* technical troubleshooting
+- AWS networking and infrastructure
+- Terraform modules and environment configuration
+- Amazon EKS and Kubernetes
+- IAM, OIDC and workload permissions
+- Amazon ECR and container-image management
+- GitHub Actions CI/CD
+- Helm-based application packaging
+- Argo CD GitOps reconciliation
+- Argo Rollouts and controlled deployments
+- AWS Load Balancer Controller and ALB ingress
+- Kubernetes runtime configuration
+- HPA and Karpenter scaling
+- Prometheus and Grafana monitoring
+- Loki logging
+- OpenTelemetry metrics, logs and traces
+- security controls
+- backup and restore
+- cost awareness and FinOps
+- troubleshooting and debugging
+- platform limitations and technical tradeoffs
 
-## Why this repository exists
+## Repository model
 
-A resume can list technologies such as AWS, Terraform, Kubernetes and Argo CD, but a list of tools does not show how those technologies were used or whether the person understands the decisions behind the implementation.
+The project is maintained under the `cloudnative-platform-lab` GitHub organization.
 
-This repository connects each project claim to visible evidence.
+It is divided into four repositories:
 
-As the project progresses, we will publish:
+### `astronomy-shop-evidence` — Public
 
-* architecture diagrams
-* selected code excerpts
-* sanitized command outputs
-* AWS and Kubernetes deployment results
-* CI/CD and GitOps evidence
-* application traffic-flow validation
-* scaling tests
-* metrics, logs, traces and alerts
-* failure and recovery tests
-* backup and restore results
-* security validation
-* problems encountered and improvements made
+This repository contains the public documentation and technical evidence for the project.
 
-## Public evidence and private implementation
+It includes architecture explanations, selected implementation excerpts, command outputs, deployment results, testing evidence, failures, fixes, limitations and improvements.
 
-The complete application, Terraform, CI/CD and GitOps implementations are maintained in private repositories because they contain reusable engineering work.
+### `astronomy-shop-app` — Private
 
-This public repository will provide enough evidence to explain:
+This repository contains the application source code, Dockerfiles, service configuration and application-level CI workflows.
 
-* what we built
-* why we selected the architecture
-* how the components work together
-* how the platform was deployed
-* how the platform was tested
-* what problems we encountered
-* how those problems were resolved
-* what tradeoffs and limitations remain
+### `astronomy-shop-infrastructure` — Private
 
-Selected implementation excerpts will be shared when they are required to support a technical claim.
+This repository contains the Terraform modules, AWS infrastructure configuration, Amazon EKS setup, networking, IAM, security, backup, observability and platform configuration.
 
-The complete private repositories can also be demonstrated through a controlled live walkthrough during technical interviews.
+### `astronomy-shop-gitops` — Private
 
-## Contributors
+This repository contains the Helm charts, environment values, Argo CD applications, Kubernetes manifests, Argo Rollouts configuration and GitOps deployment structure.
+
+## Why the implementation repositories are private
+
+The complete Terraform modules, CI/CD workflows and GitOps configuration required significant time to design, test, troubleshoot and improve.
+
+Publishing the full repositories would allow the implementation to be copied, reused as a ready-made project or presented by someone else as their own work.
+
+For that reason, the complete implementation remains private.
+
+Keeping the repositories private does not mean that the project depends on unsupported claims. Every major technical claim will be connected to visible evidence in this public repository.
+
+The private repositories can also be demonstrated through a controlled live walkthrough during technical interviews.
+
+## How the project will be proven
+
+The evidence published in this repository may include:
+
+- architecture diagrams
+- selected and sanitized code excerpts
+- Terraform validation results
+- sanitized Terraform plan summaries
+- GitHub pull requests and review history
+- GitHub Actions workflow results
+- Amazon ECR image information
+- Kubernetes command outputs
+- Argo CD synchronization results
+- deployment screenshots
+- running workload information
+- scaling tests
+- failure and recovery tests
+- backup and restore results
+- monitoring dashboards
+- logs and traces
+- security validation
+- problems encountered and improvements made
+
+A screenshot alone will not be treated as complete proof when stronger evidence is available.
+
+For example, a CI/CD claim may be supported through a workflow excerpt, a successful pipeline run, an image published to Amazon ECR, a GitOps image-tag update, an Argo CD synchronization result and the Kubernetes workload running the new image.
+
+A Terraform claim may be supported through a selected configuration excerpt, a successful `terraform validate` result, a sanitized plan summary and the corresponding AWS resource.
+
+The purpose is to demonstrate the implementation, the result and the technical understanding without publishing the complete reusable source.
+
+## Information that will not be published
+
+The public evidence will not expose:
+
+- AWS access keys
+- GitHub tokens
+- passwords
+- Kubernetes secrets
+- `.env` files
+- Terraform state files
+- kubeconfig files
+- private certificates
+- sensitive backend configuration
+- unnecessary AWS account identifiers
+- complete reusable Terraform modules
+- complete private GitOps values
+- private repository credentials
+
+All evidence will be reviewed and sanitized before publication.
+
+## Collaboration model
+
+Prasanna and Narendhiran work through their individual GitHub accounts.
+
+Each topic has a primary contributor, but both contributors review and understand the complete platform.
+
+The normal workflow is:
+
+1. The primary contributor creates a branch.
+2. The contributor prepares the implementation evidence and documentation.
+3. The other contributor reviews the pull request.
+4. Any requested changes are completed.
+5. The pull request is approved and merged.
+6. The public evidence is published only after the GitHub update is complete.
+
+This process creates a verifiable record of contribution, review and collaboration.
+
+## Primary focus areas
 
 ### Prasanna
 
-Prasanna’s main contribution areas are:
+Prasanna’s primary focus areas include:
 
-* AWS infrastructure
-* Terraform
-* Amazon EKS
-* networking
-* IAM and OIDC
-* Amazon ECR
-* ingress
-* scaling infrastructure
-* security controls
-* backup and restoration
-* cost management
+- AWS architecture
+- Terraform structure
+- Amazon EKS foundation
+- networking
+- IAM and OIDC
+- Amazon ECR
+- ingress and load balancing
+- scaling infrastructure
+- security controls
+- backup planning
+- FinOps and cost awareness
+- platform limitations and tradeoffs
 
 ### Narendhiran
 
-Narendhiran’s main contribution areas are:
+Narendhiran’s primary focus areas include:
 
-* GitHub Actions
-* container-image delivery
-* Helm
-* Argo CD
-* Argo Rollouts
-* Kubernetes workloads
-* runtime configuration
-* Redis and Valkey integration
-* observability
-* troubleshooting
+- GitHub Actions CI/CD
+- Docker image delivery
+- Helm configuration
+- Argo CD
+- GitOps deployment flow
+- Argo Rollouts
+- Kubernetes workloads
+- runtime configuration
+- Redis and Valkey integration
+- observability
+- troubleshooting and debugging
 
-Both contributors review each other’s work through GitHub pull requests.
+These focus areas describe how the work is organized. They do not limit either contributor’s understanding of the complete platform.
 
-## Project progress
+## Current progress
 
 ### Day 01 — Project introduction
 
-**Status:** Published
-**Contributors:** Prasanna and Narendhiran
-
-We introduced the project, application scope, platform scope, contribution areas and the boundary between public evidence and private implementation.
-
-[View the Day 01 project introduction](episodes/day-01-project-introduction.md)
-
-### Day 02 — Architecture and traffic flow
-
-**Status:** Next
-**Main contributor:** Prasanna
-**Reviewer:** Narendhiran
-
-This episode will explain the architecture, user traffic flow, AWS and Kubernetes boundaries, `frontend-proxy` routing, internal services and environment design.
-
-Evidence link will be added after publication.
-
-### Day 03 — Terraform and AWS foundation
-
-**Status:** Planned
-**Main contributor:** Prasanna
-**Reviewer:** Narendhiran
-
-This episode will cover the Terraform structure, AWS foundation, module dependencies and the separation between infrastructure bootstrap and platform configuration.
-
-Evidence link will be added after publication.
-
-### Day 04 — Amazon EKS, IAM and ECR
-
-**Status:** Planned
-**Main contributor:** Prasanna
-**Reviewer:** Narendhiran
-
-This episode will document the EKS cluster, IAM and OIDC integration, worker-node access and Amazon ECR repositories.
-
-Evidence link will be added after publication.
-
-### Day 05 — GitHub Actions CI/CD
-
-**Status:** Planned
-**Main contributor:** Narendhiran
-**Reviewer:** Prasanna
-
-This episode will explain how application code is built, tested, scanned, packaged as a container image and pushed to Amazon ECR.
-
-Evidence link will be added after publication.
-
-### Day 06 — Pipeline security
-
-**Status:** Planned
-**Main contributor:** Prasanna
-**Reviewer:** Narendhiran
-
-This episode will document container-image scanning, software bill of materials generation, signing and other pipeline security checks that are implemented.
-
-Evidence link will be added after publication.
-
-### Day 07 — Helm and GitOps structure
-
-**Status:** Planned
-**Main contributor:** Narendhiran
-**Reviewer:** Prasanna
-
-This episode will explain the Helm chart, environment-specific values and the GitOps repository structure.
-
-Evidence link will be added after publication.
-
-### Day 08 — Argo CD reconciliation
-
-**Status:** Planned
-**Main contributor:** Narendhiran
-**Reviewer:** Prasanna
-
-This episode will demonstrate how Argo CD detects changes in Git and reconciles the desired application state into Amazon EKS.
-
-Evidence link will be added after publication.
-
-### Day 09 — Argo Rollouts and rollback
-
-**Status:** Planned
-**Main contributor:** Narendhiran
-**Reviewer:** Prasanna
-
-This episode will document the application rollout strategy, deployment validation and rollback process.
-
-Evidence link will be added after publication.
-
-### Day 10 — ALB ingress and application traffic
-
-**Status:** Planned
-**Main contributor:** Prasanna
-**Reviewer:** Narendhiran
-
-This episode will demonstrate how public traffic reaches `frontend-proxy` through the Application Load Balancer and Kubernetes Ingress while backend services remain internal.
-
-Evidence link will be added after publication.
-
-### Day 11 — Runtime configuration and Valkey
-
-**Status:** Planned
-**Main contributor:** Narendhiran
-**Reviewer:** Prasanna
-
-This episode will explain application configuration, Kubernetes ConfigMaps and Secrets, service communication and the cart service’s Valkey dependency.
-
-Evidence link will be added after publication.
-
-### Day 12 — HPA and Karpenter scaling
-
-**Status:** Planned
-**Main contributor:** Prasanna
-**Reviewer:** Narendhiran
-
-This episode will demonstrate pod scaling through the Horizontal Pod Autoscaler and node scaling through Karpenter.
-
-Evidence link will be added after publication.
-
-### Day 13 — Observability
-
-**Status:** Planned
-**Main contributor:** Narendhiran
-**Reviewer:** Prasanna
-
-This episode will document metrics, dashboards, logs, traces and alerts using Prometheus, Grafana, Loki and OpenTelemetry.
-
-Evidence link will be added after publication.
-
-### Day 14 — Security, backup and cost management
-
-**Status:** Planned
-**Main contributor:** Prasanna
-**Reviewer:** Narendhiran
-
-This episode will document the security controls, backup and restore validation, operational safeguards and cost-management decisions used in the project.
-
-Evidence link will be added after publication.
-
-### Day 15 — Final validation and project summary
-
-**Status:** Planned
-**Contributors:** Prasanna and Narendhiran
-
-This episode will bring together the completed evidence, test results, failures, improvements, remaining limitations and final project outcome.
-
-Evidence link will be added after publication.
-
-## Repository navigation
-
-* [Day 01 — Project introduction](episodes/day-01-project-introduction.md)
-
-New episode links will be added here after each pull request is reviewed and merged.
-
-## Technical review
-
-Feedback is welcome on the evidence published in this repository.
-
-Useful review questions include:
-
-* Does the evidence support the technical claim?
-* Is an important dependency or risk missing?
-* Is the design decision explained clearly?
-* Is further validation required?
-* Are the tradeoffs described honestly?
-* Would the evidence be sufficient during a junior DevOps or Cloud Engineering interview?
-
-Feedback can be shared through GitHub issues, pull-request comments or the related LinkedIn discussion.
+The project objective, application scope, platform scope, contributor focus areas, repository model and public-evidence approach have been documented.
+
+[Read the Day 01 project introduction](episodes/day-01-project-introduction.md)
+
+## 15-day evidence series
+
+The project will be documented through the following evidence topics:
+
+1. **Project introduction** — Project scope, repository model, contributor focus areas and evidence approach.
+2. **Architecture and traffic flow** — Platform architecture, AWS boundaries, Kubernetes boundaries and end-to-end request flow.
+3. **Terraform and AWS foundation** — Terraform structure, networking, environment configuration and infrastructure validation.
+4. **Amazon EKS, IAM and Amazon ECR** — Cluster foundation, workload permissions and image-storage design.
+5. **GitHub Actions CI/CD** — Application build, test, container-image creation and image publishing.
+6. **Pipeline security** — OIDC authentication, permissions, image scanning and secure delivery controls.
+7. **Helm and GitOps structure** — Helm charts, environment values and GitOps repository organization.
+8. **Argo CD reconciliation** — Desired-state synchronization, drift detection and deployment verification.
+9. **Argo Rollouts and rollback** — Controlled releases, rollout validation and rollback behaviour.
+10. **ALB ingress and application traffic** — External traffic, ingress configuration and service routing.
+11. **Runtime configuration and Valkey** — Application configuration, Kubernetes runtime settings and data-service integration.
+12. **HPA and Karpenter scaling** — Pod scaling, node provisioning and workload response under load.
+13. **Observability** — Metrics, logs, traces, dashboards and alerting.
+14. **Security, backup and cost management** — Security validation, backup planning, restore testing and FinOps controls.
+15. **Final validation and project summary** — Complete evidence review, remaining limitations and final project assessment.
+
+Each topic will be marked as published only after the related GitHub pull request has been reviewed and merged.
+
+## Repository structure
+
+The repository begins with the project README and the Day 1 introduction:
+
+astronomy-shop-evidence/
+├── README.md
+└── episodes/
+    └── day-01-project-introduction.md
