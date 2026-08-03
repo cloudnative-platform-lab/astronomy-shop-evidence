@@ -1,0 +1,19 @@
+# Platform Dev Terraform Outputs
+Captured UTC: 2026-08-03T06:14:21Z
+
+Terraform v1.15.8
+
+alb_access_logs_bucket_name = "astronomy-shop-dev-<AWS_ACCOUNT_ID>-alb-logs"
+alerts_topic_arn = "arn:aws:sns:ap-south-1:<AWS_ACCOUNT_ID>:astronomy-shop-dev-platform-alerts"
+argo_rollouts_release = "argo-rollouts"
+argocd_root_application_name = "astronomy-shop-dev-root"
+argocd_root_application_path = "argocd/appsets/dev"
+aws_load_balancer_controller_role_arn = "arn:aws:iam::<AWS_ACCOUNT_ID>:role/astronomy-shop-dev-aws-lbc"
+cert_manager_role_arn = "arn:aws:iam::<AWS_ACCOUNT_ID>:role/astronomy-shop-dev-cert-manager"
+external_dns_role_arn = "arn:aws:iam::<AWS_ACCOUNT_ID>:role/astronomy-shop-dev-external-dns"
+finops_budget_name = "astronomy-shop-dev-monthly-budget"
+karpenter_controller_role_arn = "arn:aws:iam::<AWS_ACCOUNT_ID>:role/KarpenterController-<AWS_ACCOUNT_ID><AWS_ACCOUNT_ID>06"
+kubernetes_security_namespaces = [
+  "dev",
+]
+workload_namespace = "dev"

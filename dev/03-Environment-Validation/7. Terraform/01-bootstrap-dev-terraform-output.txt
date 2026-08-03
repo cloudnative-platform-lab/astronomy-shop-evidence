@@ -1,0 +1,39 @@
+# Bootstrap Dev Terraform Outputs
+Captured UTC: 2026-08-03T06:13:43Z
+
+Terraform v1.15.8
+
+alb_certificate_arn = "arn:aws:acm:ap-south-1:<AWS_ACCOUNT_ID>:certificate/e56dc39c-d343-40fd-991a-c2733325964f"
+app_config_secret_arn = "arn:aws:secretsmanager:ap-south-1:<AWS_ACCOUNT_ID>:secret:astronomy-shop/dev/app-config-cq6x8H"
+app_storage_bucket_arn = "arn:aws:s3:::astronomy-shop-dev-<AWS_ACCOUNT_ID>-app-storage"
+app_storage_bucket_name = "astronomy-shop-dev-<AWS_ACCOUNT_ID>-app-storage"
+cloudfront_certificate_arn = "arn:aws:acm:us-east-1:<AWS_ACCOUNT_ID>:certificate/6d83e3e8-4a48-4718-9545-c5175e0f5285"
+cloudfront_distribution_id = "E3ST9UN0BUXD39"
+cloudfront_domain_name = "daqiulquf02ce.cloudfront.net"
+cloudfront_hosted_zone_id = "Z2FDTNDATAQYW2"
+cluster_certificate_authority_data = "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURCVENDQWUyZ0F3SUJBZ0lJUzcyUXBKemY4aTR3RFFZSktvWklodmNOQVFFTEJRQXdGVEVUTUJFR0ExVUUKQXhNS2EzVmlaWEp1WlhSbGN6QWVGdzB5TmpBM01qWXhPRFUxTWpaYUZ3MHpOakEzTWpNeE9UQXdNalphTUJVeApFekFSQmdOVkJBTVRDbXQxWW1WeWJtVjBaWE13Z2dFaU1BMEdDU3FHU0liM0RRRUJBUVVBQTRJQkR3QXdnZ0VLCkFvSUJBUUMrUFRDMSt6c0kwNWY5cmxwMzJxVFptaVg4Y3VoUmQwL2ZnbWtuaUFwaHk0NjgwN3RxNmRvVHhwU3QKRVhzcUswVXJjbmVadCthUi9SN0VoTUZMWndpRXRKYW82QmdWQXZRcFBHRVJwbkY5UjZZYnZJZXV6OEl3N1FvbgowaVVySGRXNEhhMHo0TjlXNEVvNDRsT242UGdYYUpXeTFTNktOR1I5TjF6UkNmaWh0WEZ4ZHRwZ2lZQU93SHNGCnFiN29FN1pxdXoyZTRpNENyMkVJS2dqSFRHOHd3SHducE9HRVFiVjhRbXJRbzlhTmFZMExac3BURi9WeXZnK0wKQXlBVjlkeXlEUGxyL2xuNEtNcFVMUFVIZjl3TnVnbGNNb09GVng1ejhhNDJuUWg4NGtHU2I4WndEYk01UC94SgovU1VyZWhGRWNKVmk4NnBPaTdTMGhiYzVhMUtYQWdNQkFBR2pXVEJYTUE0R0ExVWREd0VCL3dRRUF3SUNwREFQCkJnTlZIUk1CQWY4RUJUQURBUUgvTUIwR0ExVWREZ1FXQkJSektYc29MWmhQeFR0M1dTZ2Q3SXJXV0RWaWtEQVYKQmdOVkhSRUVEakFNZ2dwcmRXSmxjbTVsZEdWek1BMEdDU3FHU0liM0RRRUJDd1VBQTRJQkFRQW03VFpCVkhQbwpRSFVvRzN1VHZRV1IvR3NhQWxwSFV3azdzdkpjdk56ZjZkV0lLbG1wZW5aWGlRMHdvNlVBRWVkMklQYkNtNkF4CnZ4V295SHAvOW9TeUlpa3FITkpoVVdVT3ZWWFlVU2w1NE5SYkMwWDZMUXdyalRxOUMyMDgzSzFLNmg5NS9jOE8KUkk5Y3lOazFRTEVLZDVLU2FjWVdlS2U1VkFoMDR6YS9OdTJjNHpLM0h0TXl6anlnS1VkYUNuV09mektRTXl4KwpzN2h6NWY3M296bUo4UXdvRGg0ejNVZ0Jid2VVbEQ0Y3BGOTIyS01sOXlDako4eEM4UDlaYlBBQjNma2ZHQk43Cm9hTEtBektxYVNJVGR2M2FvL3pQWXJzOFlZdmZTK1RYYTF4d1BrekxNNUpTRmtnMlR1WnVKRWlFVzdKUFFyS2YKVWNmUHp4THVqeUUwCi0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K"
+cluster_endpoint = "https://3DE69A24572444839D08EFE5BA1E8B18.gr7.ap-south-1.eks.amazonaws.com"
+cluster_name = "astronomy-shop-dev"
+cluster_security_group_id = "sg-0bc08bb78879ade50"
+database_subnet_group_name = "astronomy-shop-dev-db-subnets"
+database_subnet_ids = [
+  "subnet-0534dec5245040ec5",
+  "subnet-0f5a4c81ac3365920",
+]
+dr_region = "ap-southeast-1"
+kms_key_arn = "arn:aws:kms:ap-south-1:<AWS_ACCOUNT_ID>:key/d00e48b6-25eb-4682-a91f-e7ed8ff0aba9"
+node_security_group_id = "sg-04d95034c157a2c2f"
+oidc_provider_arn = "arn:aws:iam::<AWS_ACCOUNT_ID>:oidc-provider/oidc.eks.ap-south-1.amazonaws.com/id/3DE69A24572444839D08EFE5BA1E8B18"
+private_subnet_ids = [
+  "subnet-07d90ac5eaecbe36f",
+  "subnet-0254e08c809661145",
+]
+public_subnet_ids = [
+  "subnet-013f35eda7803cec4",
+  "subnet-0f2c905c796f555e6",
+]
+redis_primary_endpoint = "master.astronomy-shop-dev-redis.ghpwfx.aps1.cache.amazonaws.com"
+redis_replication_group_arn = "arn:aws:elasticache:ap-south-1:<AWS_ACCOUNT_ID>:replicationgroup:astronomy-shop-dev-redis"
+route53_zone_id = "Z0636003325CNPCQO1REW"
+vpc_cidr = "10.10.0.0/16"
+vpc_id = "vpc-0f42c252f723429df"
